@@ -20,6 +20,17 @@ import MailIcon from '@material-ui/icons/Mail';
 import styled from 'styled-components'
 
 
+
+function handleClick(text) {
+  if (text === "Why programming") {
+    document.getElementById("modal").style.display = "block";
+  } else if (text === "Download Resume") {
+    window.location.href = "/Bemnet Dejene Developer Resume.docx"
+  }
+
+
+}
+
 const Avatar = styled.img`
   width: 15vw;
 `
@@ -141,7 +152,7 @@ export default function PersistentDrawerRight() {
 
         <List>
           {['About Me', 'Contact Info', 'Download Resume', 'Why programming'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} onClick={() => handleClick(text)} id={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -152,6 +163,7 @@ export default function PersistentDrawerRight() {
           
         </List>
       </Drawer>
+      <div id='hello'></div>
     </div>
   );
 }

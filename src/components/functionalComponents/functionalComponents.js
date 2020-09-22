@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Typography, createMuiTheme, ThemeProvider, Button} from '@material-ui/core'
-import { red, lightGreen, orange } from '@material-ui/core/colors'
 
 const IntroDiv = styled.div`
     height: fit-content;
@@ -17,9 +16,12 @@ const IntroDiv = styled.div`
 
 const theme = createMuiTheme({
     palette: {
-        primary: red,
-        secondary: orange,
-        background: lightGreen
+        primary: {
+            main: '#0d47a1',
+        },
+        secondary: {
+            main: '#e65100'
+        },
     },
 });
 
@@ -35,9 +37,8 @@ function Intro() {
                 <br></br>
 
                 <ThemeProvider theme={theme}>
-                    
-                   <Button color="primary" variant="outlined" size="large" as="a" href="#projects" className="button"> View Projects </Button>
-                   <Button color="secondary" variant="outlined" size="large" as="a" href="#my-journey" className="button"> See my journey </Button>
+                   <Button color="primary" variant="contained" size="large" as="a" href="#projects" className="button"> View Projects </Button>
+                   <Button color="secondary" variant="contained" size="large" as="a" href="#my-journey" className="button"> See my journey </Button>
                 </ThemeProvider>
 
             </IntroDiv>

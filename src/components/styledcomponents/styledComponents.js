@@ -27,7 +27,6 @@ export const BubblesContainer = styled.div`
     display: flex;
     padding: 3vw;
     transform: translateY(100vh);
-    border: solid black;
 
     img {
         animation: ${BubblesAnimation} 6s linear infinite;
@@ -63,8 +62,25 @@ export const Bubbles = styled.img`
 
 
 export const JourneyDiv = styled.div`
-    margin-left: 5vw;
-    padding-top: 3vh;
+    height: 135vh;
+    width: 100vw;   
+    justify-content: center;
+    border: solid black;
+    padding-top: 5vh;
+
+    h3 {
+        margin-left: 5vw;
+        color: lightskyblue;
+        padding-bottom: 5vh;
+    }
+
+    img {
+        height: 60vh;
+        margin-left: 15vw;
+        margin-top: 20vh;
+        transform: rotate(90deg);
+    }
 `;
+
 
 
