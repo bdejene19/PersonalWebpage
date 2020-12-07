@@ -1,12 +1,20 @@
 import styled, {keyframes} from 'styled-components';
 
+export const PageLayout = styled.div`
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+`
+
+
 export const CoverPage = styled.div`
     overflow: hidden;
     height: 100vh;
     width: 100vw;
     background-image: url("https://image.freepik.com/free-vector/underwater-background-water-surface-ocean-sea_33099-1755.jpg");
     background-size: cover;
-`
+`;
 
 
 const BubblesAnimation = keyframes`
@@ -20,9 +28,7 @@ const BubblesAnimation = keyframes`
         transform: translateY(-110vh);
         opacity: 0;
     }
-   
-
-`
+`;
 export const BubblesContainer = styled.div`
     display: flex;
     padding: 3vw;
@@ -60,27 +66,63 @@ export const Bubbles = styled.img`
     height: 25vh;
 `;
 
-
 export const JourneyDiv = styled.div`
-    height: 135vh;
-    width: 100vw;   
-    justify-content: center;
-    border: solid black;
-    padding-top: 5vh;
-
-    h3 {
-        margin-left: 5vw;
-        color: lightskyblue;
-        padding-bottom: 5vh;
-    }
-
+    height: fit-content;
+    width: 100vw;
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-bottom: 20vh;
+    background: url('https://process.filestackapi.com/cache=expiry:max/resize=width:1050/0w55oh9HTEqO3yqHs4tQ');
+   
     img {
-        height: 60vh;
-        margin-left: 15vw;
-        margin-top: 20vh;
+        height: 50vh;
         transform: rotate(90deg);
-    }
+        margin-top: 22vh;
+        margin-left: 5vw;
+        justify-self: right;
+    } 
 `;
 
+export const ProjectsWrapper = styled.div`
 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr ;
+    justify-items: center;
+    align-content: center;
+    grid-gap: 0;
+    padding: 1em;
+    
+    .flipcard{
+        background-color: transparent;
+        cursor: pointer;  
+        width: 25vw;
+        height: 60vh;
+        border: solid black 2px;
+        perspective: 1000px;
+        
+
+        .flipcard-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .flipcard-front, .flipcard-back{
+            position: absolute;
+            width: 100%;
+            height: 100%; 
+            /* backface-visibility: hidden;
+            -webkit-backface-visibility: hidden; */  
+        }
+        
+        .flipcard-back {
+            color: pink;
+            transform: rotateY(180deg);
+        }
+    }
+`;
 

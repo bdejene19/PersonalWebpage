@@ -12,7 +12,7 @@ const IntroDiv = styled.div`
         margin-right: 5vw;
         margin-left: 5vw;
     }
-`
+`;
 
 const theme = createMuiTheme({
     palette: {
@@ -37,8 +37,8 @@ function Intro() {
                 <br></br>
 
                 <ThemeProvider theme={theme}>
-                   <Button color="primary" variant="contained" size="large" as="a" href="#projects" className="button"> View Projects </Button>
-                   <Button color="secondary" variant="contained" size="large" as="a" href="#my-journey" className="button"> See my journey </Button>
+                    <Button color="secondary" variant="contained" size="large" as="a" href="#my-journey" className="button"> See my journey </Button>
+                    <Button color="primary" variant="contained" size="large" as="a" href="#projects" className="button"> View Projects </Button>
                 </ThemeProvider>
 
             </IntroDiv>
