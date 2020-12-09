@@ -5,6 +5,9 @@ export const PageLayout = styled.div`
     height: 100vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 `
 
 
@@ -22,8 +25,6 @@ const BubblesAnimation = keyframes`
         transform: translateY(0)
         opacity: 1;
     }
-
-
     to {
         transform: translateY(-110vh);
         opacity: 0;
@@ -94,35 +95,47 @@ export const ProjectsWrapper = styled.div`
     align-content: center;
     grid-gap: 0;
     padding: 1em;
-    
-    .flipcard{
-        background-color: transparent;
-        cursor: pointer;  
-        width: 25vw;
-        height: 60vh;
-        border: solid black 2px;
-        perspective: 1000px;
-        
 
-        .flipcard-inner {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-        }
+    .flipcard-inner {
+        background-color: transparent;
+        perspective: 1000px;
+        cursor: pointer;  
+        width: 27vw;
+        height: 65vh;
+        border: solid lightgrey 5px;
+        box-shadow: slateblue 0px 0px 5px 5px;
         
-        .flipcard-front, .flipcard-back{
-            position: absolute;
-            width: 100%;
-            height: 100%; 
-            /* backface-visibility: hidden;
-            -webkit-backface-visibility: hidden; */  
+        position: relative;
+        transform-style: preserve-3d;   
+    } 
+
+    .flipcard-front, .flipcard-back{
+        position: absolute;
+        width: 100%;
+        height: 100%; 
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden; 
+    }
+    
+    .flipcard-back {
+        color: white;
+        transform: rotateY(180deg);
+
+        .flipcard-back-content {
+            background-color: slateblue;
+            padding-left: 1em;
+            height: 75%;
+
+            ul  {
+                margin-top: 0;
+            }
         }
-        
-        .flipcard-back {
-            color: pink;
-            transform: rotateY(180deg);
+        .button-flipcard-back {
+            text-align: center;
+            margin-top: 1em;
+            justify-content: space-around;
         }
     }
+    
 `;
 

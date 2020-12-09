@@ -35,7 +35,6 @@ function Intro() {
                 </Typography> 
 
                 <br></br>
-
                 <ThemeProvider theme={theme}>
                     <Button color="secondary" variant="contained" size="large" as="a" href="#my-journey" className="button"> See my journey </Button>
                     <Button color="primary" variant="contained" size="large" as="a" href="#projects" className="button"> View Projects </Button>

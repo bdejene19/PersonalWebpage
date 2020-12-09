@@ -33,7 +33,7 @@ function SkillsWrapper() {
             <i><Typography variant="h3" color="primary" style={{fontSize: 36, paddingLeft: 25, color: 'slateblue'}}>A closer look at my coding journey...</Typography></i>
 
             <div className='skills-wrapper'>
-                <h2 class='skills-title'>Programming Skills</h2>
+                <h2 className='skills-title'>Programming Skills</h2>
                 <div className="programming-skills">
                 <h3>Languages</h3>
                     JS <br></br>
@@ -50,6 +50,7 @@ function SkillsWrapper() {
                     React <br></br>
                     Express <br></br>
                     MongoDB <br></br>
+                    Node <br></br>
                     Git Version Control <br></br>
                     Sass/Styled Components <br></br>
                     Responsive Design
