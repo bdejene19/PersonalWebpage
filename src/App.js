@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { CoverPage, BubblesContainer, Bubbles, JourneyDiv, ProjectsWrapper, PageLayout} from './components/styledcomponents/styledComponents';
-import Intro from './components/functionalComponents/functionalComponents';
+import Intro from './components/functionalComponents/Intro';
 import ContactInfoDrawer from './components/functionalComponents/ContactInfoDrawer';
 import { Typography } from '@material-ui/core';
 import ProjectCard from './components/functionalComponents/ProjectCard';
@@ -46,13 +46,13 @@ function App() {
         </div>
       </JourneyDiv>      
 
-      <Typography variant="h3" color="primary" id='projects'>Personal projects</Typography>      
       <ProjectsWrapper>
+        <Typography variant="h3" id='projects'>Personal projects</Typography>      
         <ProjectCard 
           projectTitle='Digital Marketing Landing-Page' 
-          projectGif='/bubble.png'
           skillsInvolved={LandingPageSkills}
           idValue='landing-page'
+          projectGif='/dmpagegif.mp4'
           projDescrip='Created landing-page clone of a digital marketing, making it fully responsive to be viewable on all monitors'
           skillsLearned={NewLandingPageSkills}
           improveNotes={LandingPageImprovements}
@@ -62,6 +62,7 @@ function App() {
           projectTitle='Movie Pop App'
           skillsInvolved={MoviePopSkills}
           idValue='movie-app'
+          projectGif='movieappgif.mp4'
           projDescrip='Built own API for server using Express.js as backend, and persisted users using MongoDb. Movie/show data fetched from TMDb API.'
           skillsLearned={newMoviePopSkills}
           improveNotes={moviePopImprovements}

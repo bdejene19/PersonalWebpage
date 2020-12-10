@@ -1,35 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-}));
+
 
 const SkillsWrapper = styled.div`
   display: grid;
@@ -75,7 +52,6 @@ const turnCard = (idValue) => {
 }
 
 export default function ProjectCard(props) {
-  const classes = useStyles();
   const skillsInvolved = props.skillsInvolved;
   const thingsLearned = props.skillsLearned;
   const improvements = props.improveNotes;
@@ -104,12 +80,15 @@ export default function ProjectCard(props) {
               />
 
               <CardMedia
-                className={classes.media}
-                image="/bubble.png"
-                im
-                title="Paella dish"
+                component='video'
+                id='vid-gif'
+                image={props.projectGif}
+                onMouseEnter={(e) => e.target.play()} 
+                onMouseLeave={(e) => e.target.pause()}
+                pause 
+                title={props.projectTitle}
               />
-            
+
               <CardActions disableSpacing>
                 <SkillsWrapper>
                   {mySkills.map(skills => <div><Typography variant='body2' color='inherit'>{skills}</Typography></div>)}
@@ -119,7 +98,7 @@ export default function ProjectCard(props) {
           </div>    
 
           <div className='flipcard-back'>
-              <CardHeader style={{height: 50}}
+              <CardHeader style={{height: 50, color: "slateblue"}}
               title='About'/>
             <div className='flipcard-back-content'>
               <Typography variant='subtitle1'>{props.projDescrip}</Typography>
@@ -140,8 +119,12 @@ export default function ProjectCard(props) {
               </div>
               
               <div className='button-flipcard-back'>
-                  <Button variant='contained' className='button-viewGit' style={{backgroundColor: 'slateblue', color: 'white'}} href={props.gitLink}>View source code</Button>
-                </div>
+                <Button 
+                  variant='contained' 
+                  className='button-viewGit' 
+                  style={{backgroundColor: 'slateblue', color: 'white'}} 
+                  href={props.gitLink}>View source code</Button>
+              </div>
           </div>
           
         </div>

@@ -30,23 +30,23 @@ const SkillsDiv = styled.div`
 function SkillsWrapper() {
     return (
         <SkillsDiv>
-            <i><Typography variant="h3" color="primary" style={{fontSize: 36, paddingLeft: 25, color: 'slateblue'}}>A closer look at my coding journey...</Typography></i>
+            <b><i><Typography variant="h3" color="primary" style={{fontSize: 36, paddingLeft: 25, color: 'slateblue'}}>My Progress Journey...</Typography></i></b>
 
             <div className='skills-wrapper'>
                 <h2 className='skills-title'>Programming Skills</h2>
                 <div className="programming-skills">
-                <h3>Languages</h3>
+                    <h3>Languages</h3>
                     JS <br></br>
                     Python <br></br>
                     HTML <br></br>
                     CSS <br></br>
-                    Java
-                
+                    Java    
                 </div>
+                
                 <div></div>
 
                 <div className="programming-skills">
-                <h3>Frameworks and Technologies</h3>
+                    <h3>Frameworks and Technologies</h3>
                     React <br></br>
                     Express <br></br>
                     MongoDB <br></br>
@@ -57,11 +57,11 @@ function SkillsWrapper() {
                 </div>
 
                 <div className='programming-skills'>
-                <h3>Soft Skills</h3>
-                Collaboration and Adaptability <br></br>
-                Communication <br></br>
-                Creativity <br></br>
-                Emotional Intelligence
+                    <h3>Soft Skills</h3>
+                    Collaboration and Adaptability <br></br>
+                    Communication <br></br>
+                    Creativity <br></br>
+                    Emotional Intelligence
                 </div>
             </div>
         </SkillsDiv>

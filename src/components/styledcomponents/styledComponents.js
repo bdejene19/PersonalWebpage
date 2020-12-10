@@ -96,11 +96,20 @@ export const ProjectsWrapper = styled.div`
     grid-gap: 0;
     padding: 1em;
 
+    #projects {
+        color: slateblue;
+        grid-column: 1;
+        grid-row: 1;
+        padding-bottom: 0.5em;
+    }
+
     .flipcard-inner {
+        grid-row: 2;
         background-color: transparent;
         perspective: 1000px;
         cursor: pointer;  
         width: 27vw;
+        color: slateblue;
         height: 65vh;
         border: solid lightgrey 5px;
         box-shadow: slateblue 0px 0px 5px 5px;
@@ -117,6 +126,7 @@ export const ProjectsWrapper = styled.div`
         -webkit-backface-visibility: hidden; 
     }
     
+    
     .flipcard-back {
         color: white;
         transform: rotateY(180deg);
@@ -132,10 +142,14 @@ export const ProjectsWrapper = styled.div`
         }
         .button-flipcard-back {
             text-align: center;
-            margin-top: 1em;
+            padding: 1em;
             justify-content: space-around;
         }
     }
     
+    .vid-gif {
+        height: 60%;
+        width: 100%;
+    }
 `;
 
