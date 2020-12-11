@@ -82,7 +82,7 @@ export default function ProjectCard(props) {
               <CardMedia
                 component='video'
                 id='vid-gif'
-                image={props.projectGif}
+                image={process.env.PUBLIC_URL + '/' + props.projectGif}
                 onMouseEnter={(e) => e.target.play()} 
                 onMouseLeave={(e) => e.target.pause()}
                 pause 

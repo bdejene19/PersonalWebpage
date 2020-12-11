@@ -19,16 +19,15 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import styled from 'styled-components'
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
+import ContactToolTip from './ContactToolTip';
 
 
 function handleClick(text) {
   if (text === "Why programming") {
     document.getElementById("modal").style.display = "block";
   } else if (text === "Download Resume") {
-    window.location.href = "/Bemnet Dejene Developer Resume.docx"
+    window.location.href = process.env.PUBLIC_URL + "/Bemnet Dejene Developer Resume.docx"
   }
-
-
 }
 
 const Avatar = styled.img`
@@ -148,10 +147,15 @@ export default function PersistentDrawerRight() {
         <Divider />
         <div style={{textAlign: "center"}}>
           <Avatar src="https://www.iconfinder.com/data/icons/diversity-avatars-volume-01-v2/64/man-beard-glasses-african-512.png" alt="avatar" className="profile_photo"></Avatar>
+          <div className='immediate-contact'>
+            Phone: 519-619-3930<br></br>
+            Email: bdejene19@gmail.com<br></br>
+          </div>
+          <ContactToolTip></ContactToolTip>
         </div>
 
         <List>
-          {['About Me', 'Contact Info', 'Download Resume', 'Why programming'].map((text, index) => {
+          {['Download Resume', 'Why programming'].map((text, index) => {
             if (index === 3) {
               return (
                 <ListItem button key={text} onClick={() => handleClick(text)} id={text}>

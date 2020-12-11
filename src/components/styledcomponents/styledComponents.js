@@ -8,6 +8,17 @@ export const PageLayout = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    > {
+        font-family: 'Merriweather', serif;
+
+
+    }
+
+    nav .immediate-contact {
+        text-align: left;
+        padding-left: 5%;
+    }
 `
 
 
@@ -98,7 +109,11 @@ export const ProjectsWrapper = styled.div`
 
     #projects {
         color: slateblue;
-        grid-column: 1;
+        text-align: left;
+        justify-content: left;
+        justify-items: left;
+        justify-self: left;
+        grid-column: 1/4;
         grid-row: 1;
         padding-bottom: 0.5em;
     }

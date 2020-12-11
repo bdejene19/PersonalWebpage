@@ -7,7 +7,7 @@ import { Typography } from '@material-ui/core';
 import ProjectCard from './components/functionalComponents/ProjectCard';
 import { ModalBoxContent } from './components/functionalComponents/ModalBoxContent';
 import SkillsWrapper from './components/functionalComponents/SkillsWrapper';
-
+import './index.css'
 
 function App() {
   let LandingPageSkills = ['React', 'Material-UI','Responsive Design'];
@@ -23,61 +23,98 @@ function App() {
   let arsenalImprovements = ['Fetch data from API', 'Add grid/flexbox layout for consistency/efficiency']
   return (
     <PageLayout>
-      <ContactInfoDrawer></ContactInfoDrawer>
-
-      <CoverPage>
-        <BubblesContainer>
-          <Bubbles src="/bubble.png" alt="bubbles"></Bubbles>        
-          <Bubbles src="/bubble.png" alt="bubbles"></Bubbles>        
-          <Bubbles src="/bubble.png" alt="bubbles"></Bubbles>        
-          <Bubbles src="/bubble.png" alt="bubbles"></Bubbles>        
-          <Bubbles src="/bubble.png" alt="bubbles"></Bubbles>        
-          <Bubbles src="/bubble.png" alt="bubbles"></Bubbles>        
-        </BubblesContainer>  
-        <Intro></Intro>
-        <ModalBoxContent></ModalBoxContent>
-      </CoverPage>
+      <header>
+        <nav>
+          <ContactInfoDrawer>
+          </ContactInfoDrawer>
+        </nav>
+      </header>
       
-      <JourneyDiv id="my-journey">
-        <SkillsWrapper></SkillsWrapper>
+ 
+      <main>
+        <article>
+          <section>
+            <CoverPage>
+              <BubblesContainer>
+                <Bubbles src={process.env.PUBLIC_URL + '/bubble.png'} alt="bubbles"></Bubbles>        
+                <Bubbles src={process.env.PUBLIC_URL + '/bubble.png'} alt="bubbles"></Bubbles>        
+                <Bubbles src={process.env.PUBLIC_URL + '/bubble.png'} alt="bubbles"></Bubbles>        
+                <Bubbles src={process.env.PUBLIC_URL + '/bubble.png'} alt="bubbles"></Bubbles>        
+                <Bubbles src={process.env.PUBLIC_URL + '/bubble.png'} alt="bubbles"></Bubbles>        
+                <Bubbles src={process.env.PUBLIC_URL + '/bubble.png'} alt="bubbles"></Bubbles>        
+              </BubblesContainer>  
+              <Intro></Intro>
+              <ModalBoxContent></ModalBoxContent>
+            </CoverPage>
+          </section>
+        </article>
+        
+        <article>
+          <section>
+            <JourneyDiv id="my-journey">
+              <SkillsWrapper></SkillsWrapper>
 
-        <div>
-          <img src="/roadmap.png" alt="roadmap"></img>
-        </div>
-      </JourneyDiv>      
+              <div>
+                <img src={process.env.PUBLIC_URL + "/roadmap.png"} alt="roadmap"></img>
+              </div>
+            </JourneyDiv>
 
-      <ProjectsWrapper>
-        <Typography variant="h3" id='projects'>Personal projects</Typography>      
-        <ProjectCard 
-          projectTitle='Digital Marketing Landing-Page' 
-          skillsInvolved={LandingPageSkills}
-          idValue='landing-page'
-          projectGif='/dmpagegif.mp4'
-          projDescrip='Created landing-page clone of a digital marketing, making it fully responsive to be viewable on all monitors'
-          skillsLearned={NewLandingPageSkills}
-          improveNotes={LandingPageImprovements}
-          gitLink='https://github.com/bdejene19/DigitalMarketingLandPage'
-          ></ProjectCard>
-        <ProjectCard
-          projectTitle='Movie Pop App'
-          skillsInvolved={MoviePopSkills}
-          idValue='movie-app'
-          projectGif='movieappgif.mp4'
-          projDescrip='Built own API for server using Express.js as backend, and persisted users using MongoDb. Movie/show data fetched from TMDb API.'
-          skillsLearned={newMoviePopSkills}
-          improveNotes={moviePopImprovements}
-          gitLink='https://github.com/bdejene19/MovieApp'
-        ></ProjectCard>
-        <ProjectCard
-          projectTitle="Arsenal Soccer Fans Page"
-          skillsInvolved={ArsenalFansSkills}
-          idValue='arsenal-fanpage'
-          projDescrip="My first front-end project: a single-page app meant to showcase the past, present and future of the soccer club, Arsenal. Is a static HTML site, however, has dynanism through state management."
-          skillsLearned={newArsenalSkills}
-          improveNotes={arsenalImprovements}
-          gitLink='https://github.com/bdejene19/ArsenalSoccerFansPage'
-        ></ProjectCard>
-      </ProjectsWrapper>
+          </section>
+        </article>
+              
+        <article>
+
+          <ProjectsWrapper>
+            <Typography variant="h3" id='projects'>Personal projects</Typography>      
+
+            <section>
+              
+              <ProjectCard 
+              projectTitle='Digital Marketing Landing-Page' 
+              skillsInvolved={LandingPageSkills}
+              idValue='landing-page'
+              projectGif='/dmpagegif.mp4'
+              projDescrip='Created landing-page clone of a digital marketing, making it fully responsive to be viewable on all monitors'
+              skillsLearned={NewLandingPageSkills}
+              improveNotes={LandingPageImprovements}
+              gitLink='https://github.com/bdejene19/DigitalMarketingLandPage'
+              ></ProjectCard>
+            </section>
+          
+            <section>
+              <ProjectCard
+                projectTitle='Movie Pop App'
+                skillsInvolved={MoviePopSkills}
+                idValue='movie-app'
+                projectGif='movieappgif.mp4'
+                projDescrip='Built own API for server using Express.js as backend, and persisted users using MongoDb. Movie/show data fetched from TMDb API.'
+                skillsLearned={newMoviePopSkills}
+                improveNotes={moviePopImprovements}
+                gitLink='https://github.com/bdejene19/MovieApp'
+              ></ProjectCard>
+            </section>
+
+            <section>
+              <ProjectCard
+                projectTitle="Arsenal Soccer Fans Page"
+                skillsInvolved={ArsenalFansSkills}
+                idValue='arsenal-fanpage'
+                projectGif='arsenalfansgif.mp4'
+                projDescrip="My first front-end project: a single-page app meant to showcase the past, present and future of the soccer club, Arsenal. Is a static HTML site, however, has dynanism through state management."
+                skillsLearned={newArsenalSkills}
+                improveNotes={arsenalImprovements}
+                gitLink='https://github.com/bdejene19/ArsenalSoccerFansPage'
+              ></ProjectCard>
+            </section>
+          
+        </ProjectsWrapper>
+          
+          
+        </article>
+        
+
+      </main>
+     
     </PageLayout>
   );
 }
