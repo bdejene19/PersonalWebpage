@@ -15,8 +15,8 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "deploy": "npm run build",
-    "predeploy": "gh-pages -D build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -D build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
