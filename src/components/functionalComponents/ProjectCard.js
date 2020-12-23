@@ -15,6 +15,7 @@ const SkillsWrapper = styled.div`
   width: 80%;
   text-align: center;
   margin-left: 10%;
+  margin-top: 7.5%;
  
   
   div {

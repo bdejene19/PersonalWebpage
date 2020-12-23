@@ -29,8 +29,7 @@ function App() {
           </ContactInfoDrawer>
         </nav>
       </header>
-      
- 
+
       <main>
         <article>
           <section>
@@ -53,7 +52,6 @@ function App() {
           <section>
             <JourneyDiv id="my-journey">
               <SkillsWrapper></SkillsWrapper>
-
               <div>
                 <img src={process.env.PUBLIC_URL + "/roadmap.png"} alt="roadmap"></img>
               </div>
@@ -63,12 +61,9 @@ function App() {
         </article>
               
         <article>
-
           <ProjectsWrapper>
             <Typography variant="h3" id='projects'>Personal projects</Typography>      
-
-            <section>
-              
+            <section> 
               <ProjectCard 
               projectTitle='Digital Marketing Landing-Page' 
               skillsInvolved={LandingPageSkills}
@@ -105,16 +100,11 @@ function App() {
                 improveNotes={arsenalImprovements}
                 gitLink='https://github.com/bdejene19/ArsenalSoccerFansPage'
               ></ProjectCard>
-            </section>
-          
-        </ProjectsWrapper>
-          
-          
+            </section>   
+          </ProjectsWrapper>
         </article>
-        
 
       </main>
-     
     </PageLayout>
   );
 }

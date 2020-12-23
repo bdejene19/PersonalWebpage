@@ -9,7 +9,7 @@ export const PageLayout = styled.div`
     padding: 0;
     box-sizing: border-box;
 
-    > {
+    * {
         font-family: 'Merriweather', serif;
 
 
@@ -123,9 +123,9 @@ export const ProjectsWrapper = styled.div`
         background-color: transparent;
         perspective: 1000px;
         cursor: pointer;  
-        width: 27vw;
+        width: 29vw;
         color: slateblue;
-        height: 65vh;
+        height: 72.5vh;
         border: solid lightgrey 5px;
         box-shadow: slateblue 0px 0px 5px 5px;
         
