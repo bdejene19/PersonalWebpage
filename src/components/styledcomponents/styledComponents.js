@@ -101,7 +101,7 @@ export const ProjectsWrapper = styled.div`
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: 1fr ;
+    grid-template-rows: auto ;
     justify-items: center;
     align-content: center;
     grid-gap: 0;
@@ -125,7 +125,7 @@ export const ProjectsWrapper = styled.div`
         cursor: pointer;  
         width: 29vw;
         color: slateblue;
-        height: 72.5vh;
+        height: 70vh;
         border: solid lightgrey 5px;
         box-shadow: slateblue 0px 0px 5px 5px;
         
@@ -165,6 +165,36 @@ export const ProjectsWrapper = styled.div`
     .vid-gif {
         height: 60%;
         width: 100%;
+    }
+
+    @media screen  and (max-width: 1000px) {
+        .flipcard-inner {
+            height: 57.5vh;
+        }
+    }
+
+
+    @media screen and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            align-items: left;
+        }
+
+        .flipcard-inner {
+            width: 65vw;
+            height: 80vh;
+            justify-content: center;
+            margin-bottom: 10vh;
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        .flipcard-inner {
+            height: 67.5vh;
+        }
     }
 `;
 

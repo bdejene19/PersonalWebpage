@@ -53,7 +53,7 @@ export default function ContactToolTip() {
         <ImmediateContactWrapper>
             <div className="tooltip">
                 <span className="tooltiptext">LinkedIn</span>
-                <a href="https://www.google.com"><img src="https://cdn2.iconfinder.com/data/icons/on-point-social-media/141/LinkedIn-512.png" alt="LinkedIn" className="contact-icon"></img></a>
+                <a href="https://www.linkedin.com/in/bemnet-dejene-8663521b1/"><img src="https://cdn2.iconfinder.com/data/icons/on-point-social-media/141/LinkedIn-512.png" alt="LinkedIn" className="contact-icon"></img></a>
 
             </div>
             <div className="tooltip">
