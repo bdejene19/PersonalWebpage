@@ -95,6 +95,30 @@ export const JourneyDiv = styled.div`
         margin-left: 5vw;
         justify-self: right;
     } 
+
+
+   #journey-stepper {
+       justify-content: space-around;
+       width: 95vw;
+       transform: translate(2.5vw, 13vh);
+   }
+
+   #stepper {
+       border-radius: 2%;
+       box-shadow: 0px 10px 10px 0 lightgrey;
+   }
+
+   #step-caption-content {
+       height: 15vh;
+   }
+
+   .progress-caption {
+       background-color: white;
+       width: 40%;
+       height: 25vh;
+       margin-top: 5%;
+       padding: 0.5em;
+   }
 `;
 
 export const ProjectsWrapper = styled.div`

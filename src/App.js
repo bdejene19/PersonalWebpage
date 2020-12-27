@@ -7,6 +7,8 @@ import { Typography } from '@material-ui/core';
 import ProjectCard from './components/functionalComponents/ProjectCard';
 import { ModalBoxContent } from './components/functionalComponents/ModalBoxContent';
 import SkillsWrapper from './components/functionalComponents/SkillsWrapper';
+import ProgressChart from './components/functionalComponents/ProgressChart';
+
 import './index.css'
 
 function App() {
@@ -51,9 +53,11 @@ function App() {
         <article>
           <section>
             <JourneyDiv id="my-journey">
-              <SkillsWrapper></SkillsWrapper>
+              
+              <ProgressChart></ProgressChart>
+
               <div>
-                <img src={process.env.PUBLIC_URL + "/roadmap.png"} alt="roadmap"></img>
+                {/* <img src={process.env.PUBLIC_URL + "/roadmap.png"} alt="roadmap"></img> */}
               </div>
             </JourneyDiv>
 
@@ -103,8 +107,15 @@ function App() {
             </section>   
           </ProjectsWrapper>
         </article>
-
       </main>
+
+      <footer>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <SkillsWrapper></SkillsWrapper>
+      </footer>
     </PageLayout>
   );
 }

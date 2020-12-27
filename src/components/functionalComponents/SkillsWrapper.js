@@ -1,39 +1,51 @@
 import React from 'react'
 import {Typography} from '@material-ui/core';
 import styled from 'styled-components';
+
 const SkillsDiv = styled.div`
     color: slateblue;
+    margin-left: 2.5vw;
    
    h2 {
        text-align: center;
-       grid-column: 1/3;
-       padding-bottom: 0;
-       margin-bottom: 0vh;
+       grid-column: 1/4;
+       
+   }
+
+   .center {
+       width: 100vw;
+        justify-content: center;
+        border: solid black 1px;
    }
 
    .skills-wrapper {
-        transform: translate(5vw, 3vh);
-       display : grid;
-       grid-template-columns: 1fr 1fr;
-       grid-template-rows: auto;
+        /* transform: translate(5vw, 3vh); */
+        display : grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
         padding-bottom: 1em;
-
-       background: linear-gradient(200deg, rgba(245, 222, 179, 0.6), rgba(255, 255, 255, 0.6));
-
+        background: linear-gradient(200deg, rgba(245, 222, 179, 0.6), rgba(255, 255, 255, 0.6));
    }
 
    .programming-skills {
        text-align: center;
+       border-right: solid slateblue 1px;
+
+       &:nth-child(4) {
+           border-right: none;
+       }
+
    }
 `;
 
 function SkillsWrapper() {
     return (
         <SkillsDiv>
-            <b><i><Typography variant="h3" color="primary" style={{fontSize: 36, paddingLeft: 25, color: 'slateblue'}}>My Progress Journey...</Typography></i></b>
-
+            {/* <b><i><Typography variant="h3" color="primary" style={{fontSize: 36, padding: 25, color: 'slateblue'}}>Developer Progress</Typography></i></b> */}
+            <div className='progrss'>
+            </div>
             <div className='skills-wrapper'>
-                <h2 className='skills-title'>Programming Skills</h2>
+                <h2 className='skills-title'>Summary</h2>
                 <div className="programming-skills">
                     <h3>Languages</h3>
                     JS <br></br>
@@ -43,7 +55,6 @@ function SkillsWrapper() {
                     Java    
                 </div>
                 
-                <div></div>
 
                 <div className="programming-skills">
                     <h3>Frameworks and Technologies</h3>

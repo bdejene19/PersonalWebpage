@@ -5,16 +5,17 @@ import {Typography, createMuiTheme, ThemeProvider, Button} from '@material-ui/co
 const IntroDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: auto;
     padding-left: 10vw;
     padding-right: 10vw;  
     
-
+    
     .myName {
         grid-column: 1/3;
         text-align: left;
         grid-row: 1;
         color: white;
+        padding-bottom: 0.1em;
         
     }
 
@@ -22,8 +23,9 @@ const IntroDiv = styled.div`
         grid-column: 1/4;
         grid-row: 2;
         text-align: center;
-        padding-bottom: 1em;
         color: lightgrey;
+        padding-bottom: 0.5em;
+
 
     }
 
@@ -52,7 +54,10 @@ const IntroDiv = styled.div`
         display: flex;
         flex-direction: column;
         height: 60vh;
-        margin-top: -10vh;  
+
+        .coverPage-descrip {
+            
+        }
 
         .btns-coverPage {
             width: 100%;

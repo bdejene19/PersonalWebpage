@@ -151,6 +151,8 @@ export default function PersistentDrawerRight() {
             Phone: 519-619-3930<br></br>
             Email: bdejene19@gmail.com<br></br>
           </div>
+          <br></br>
+
           <ContactToolTip></ContactToolTip>
         </div>
 
