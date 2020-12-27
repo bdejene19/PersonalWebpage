@@ -116,32 +116,33 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
+  
 }));
 
 function getSteps() {
-  return ['Mar. 2020: Code python as hobby', "Apr. 2020: Complete Bachelor's Degree",  'Jun. 2020: Front-end Fundamentals',  'Jun. 2020: React.js/Git/NPM', 'Jul 2020: First Static Webpage', "Jul-Sept. 2020: Fetch/AJAX and Express.js/MongoDB", 'Sept-Oct. 2020: Movie App Project', 'Nov. 2020: Responsive Design', 'Current Project: MERN Stack Chat App'];
+  return ['Mar. 2020: Code python as hobby', "Apr. 2020: Complete Bachelor's Degree",  'Jun. 2020: Frontend Fundamentals',  'Jun. 2020: React.js/Git/NPM', 'Jul 2020: First Static Webpage', "Jul-Sept. 2020: Fetch/AJAX and Express.js/MongoDB", 'Sept-Oct. 2020: Movie App Project', 'Nov. 2020: Responsive Design', 'Current Project: MERN Stack Chat App'];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return 'Libraries: MatplotLib, Pandas, skLearn, TensforFlow. Concepts: Stacks, Queues, Recursion and Binary Trees';
+      return (`Libraries: MatplotLib, Pandas, skLearn, TensforFlow. Also practiced basic algorithms (BFS, DFS) and data structures (Stacks, Queues, Recursion and Binary Trees).`);
     case 1:
-      return 'Double Major in Medical Science and Biology from the University of Western Ontario';
+      return 'Double Major in Medical Science and Biology from the University of Western Ontario.';
     case 2:
-      return 'HTML/CSS/Javascript ES6 best practices';
+      return 'HTML/CSS/Javascript ES6 best practices.';
     case 3:
-        return 'Chose React.js as front-end framework and cover Git to commit projects as I go. NPM knowledge was required to progress further (e.g. npm scripts, dependencies, etc.)';
+        return 'Chose React.js as front-end framework and cover Git to commit projects as I go. NPM knowledge was required to progress further (e.g. npm scripts, dependencies, etc.).';
     case 4: 
-        return 'Build Arsenal Fans Webpage project using skills to date: HTML, CSS, JS and React.js';
+        return 'Build Arsenal Fans Webpage project using skills to date: HTML, CSS, JS and React.js.';
     case 5:
-        return 'Learned how to fetch and manipulate data from an API. Used Express.js and MongoDB to begin making basic CRUD apps';
+        return 'Learned how to fetch and manipulate data from an API. Used Express.js and MongoDB to begin making basic CRUD apps.';
     case 6: 
-        return 'First "fullstack" app with a backend. Backend stores user data and password in MongoDB for user authentication and dynanism';
+        return 'First "fullstack" app with a backend. Backend stores user data and password in MongoDB for user authentication and dynanism.';
     case 7:
-        return 'Create a landing-page clone of a digital marketing agency to practice consistent styling via grid/flexbox and styled components';
+        return 'Create a landing-page clone of a digital marketing agency to practice consistent styling via grid/flexbox and styled components.';
     case 8: 
-        return '';
+        return 'Full stack app that has a more complex backend to make a more Progessive Web App, including the use of websockets and conditional push-notifications for a real life time chat feel.';
     default:
       return 'Unknown step';
   }
@@ -149,7 +150,7 @@ function getStepContent(step) {
 
 export default function ProgressChart() {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
   const handleNext = () => {
@@ -160,32 +161,30 @@ export default function ProgressChart() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-  };
+  const handleIndexed = (label) => {
+      let mySteps = steps;
+      for (var x = 0; x < steps.length; x++) {
+          if (mySteps[x] === label) {
+              setActiveStep(x);
+          }
+      }
+  }
 
   return (
     <div className={classes.root} id='journey-stepper'>
       <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />} id='stepper'>
         {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+          <Step key={label} id={label}>
+            <StepLabel StepIconComponent={ColorlibStepIcon} id='stepper-label-icon' onClick={() => handleIndexed(label)}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className='progress-caption'>
-        {activeStep === steps.length ? (
           <div >
-            <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
-            </Button>
-          </div>
-        ) : (
-          <div>
-            <Typography className={classes.instructions} id='step-caption-content'>Date: <br></br>{getStepContent(activeStep)}</Typography>
+            <Typography className={classes.instructions} id='step-caption-content'><u><i>Progress Review</i></u> <br></br>{getStepContent(activeStep)}</Typography>
             <div>
               <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                 Back
@@ -195,13 +194,12 @@ export default function ProgressChart() {
                 color="primary"
                 onClick={handleNext}
                 className={classes.button}
-                id='next'
+                disabled={activeStep === steps.length - 1}
               >
-                {activeStep === steps.length - 1 ? document.getElementById('next') : 'Next'}
+                  Next
               </Button>
             </div>
           </div>
-        )}
       </div>
     </div>
   );

@@ -104,12 +104,16 @@ export const JourneyDiv = styled.div`
    }
 
    #stepper {
-       border-radius: 2%;
+       border-radius: 0.5%;
        box-shadow: 0px 10px 10px 0 lightgrey;
    }
 
    #step-caption-content {
        height: 15vh;
+   }
+
+   #stepper-label-icon {
+       cursor: pointer;
    }
 
    .progress-caption {
@@ -118,6 +122,7 @@ export const JourneyDiv = styled.div`
        height: 25vh;
        margin-top: 5%;
        padding: 0.5em;
+    
    }
 `;
 
@@ -181,8 +186,12 @@ export const ProjectsWrapper = styled.div`
         }
         .button-flipcard-back {
             text-align: center;
-            padding: 1em;
             justify-content: space-around;
+
+            .btn-backSide {
+                width: 7.5vw;
+                margin: 1em;
+            }
         }
     }
     

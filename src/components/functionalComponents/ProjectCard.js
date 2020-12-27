@@ -121,9 +121,16 @@ export default function ProjectCard(props) {
               <div className='button-flipcard-back'>
                 <Button 
                   variant='contained' 
-                  className='button-viewGit' 
+                  className='btn-backSide' 
                   style={{backgroundColor: 'slateblue', color: 'white'}} 
-                  href={props.gitLink}>View source code</Button>
+                  href={props.gitLink}>Source</Button>
+
+                <Button
+                  variant='contained'
+                  style={{backgroundColor: '#d84315', color: 'white'}} 
+                  href={props.webLink}
+                  className='btn-backSide'
+                >Webpage</Button>
               </div>
           </div>
           

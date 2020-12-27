@@ -1,5 +1,4 @@
 import React from 'react'
-import {Typography} from '@material-ui/core';
 import styled from 'styled-components';
 
 const SkillsDiv = styled.div`
@@ -41,7 +40,6 @@ const SkillsDiv = styled.div`
 function SkillsWrapper() {
     return (
         <SkillsDiv>
-            {/* <b><i><Typography variant="h3" color="primary" style={{fontSize: 36, padding: 25, color: 'slateblue'}}>Developer Progress</Typography></i></b> */}
             <div className='progrss'>
             </div>
             <div className='skills-wrapper'>
@@ -70,9 +68,10 @@ function SkillsWrapper() {
                 <div className='programming-skills'>
                     <h3>Soft Skills</h3>
                     Collaboration and Adaptability <br></br>
+                    Quick Learner <br></br>
                     Communication <br></br>
                     Creativity <br></br>
-                    Emotional Intelligence
+                    Emotional Intelligence 
                 </div>
             </div>
         </SkillsDiv>

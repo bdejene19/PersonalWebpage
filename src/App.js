@@ -3,11 +3,12 @@ import './App.css';
 import { CoverPage, BubblesContainer, Bubbles, JourneyDiv, ProjectsWrapper, PageLayout} from './components/styledcomponents/styledComponents';
 import Intro from './components/functionalComponents/Intro';
 import ContactInfoDrawer from './components/functionalComponents/ContactInfoDrawer';
-import { Typography } from '@material-ui/core';
+import { createMuiTheme, Typography } from '@material-ui/core';
 import ProjectCard from './components/functionalComponents/ProjectCard';
 import { ModalBoxContent } from './components/functionalComponents/ModalBoxContent';
 import SkillsWrapper from './components/functionalComponents/SkillsWrapper';
 import ProgressChart from './components/functionalComponents/ProgressChart';
+import {ThemeProvider} from '@material-ui/core'
 
 import './index.css'
 
@@ -23,7 +24,15 @@ function App() {
   let ArsenalFansSkills = ["React", 'HTML', "CSS", "JS"];
   let newArsenalSkills = ["React States", "React Life-Cycles", "DOM manipulation"]
   let arsenalImprovements = ['Fetch data from API', 'Add grid/flexbox layout for consistency/efficiency']
+
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: 'Merriweather'
+    }
+  })
   return (
+    <ThemeProvider theme={theme}>
+
     <PageLayout>
       <header>
         <nav>
@@ -117,6 +126,8 @@ function App() {
         <SkillsWrapper></SkillsWrapper>
       </footer>
     </PageLayout>
+    </ThemeProvider>
+
   );
 }
 
