@@ -14,6 +14,7 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import ReorderIcon from '@material-ui/icons/Reorder';
+import VerticalStepper from './VerticalStepper';
 
 const ColorlibConnector = withStyles({
   alternativeLabel: {
@@ -120,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Mar. 2020: Code python as hobby', "Apr. 2020: Complete Bachelor's Degree",  'Jun. 2020: Frontend Fundamentals',  'Jun. 2020: React.js/Git/NPM', 'Jul 2020: First Static Webpage', "Jul-Sept. 2020: Fetch/AJAX and Express.js/MongoDB", 'Sept-Oct. 2020: Movie App Project', 'Nov. 2020: Responsive Design', 'Current Project: MERN Stack Chat App'];
+  return ['Mar. 2020: Code python as hobby', "Apr. 2020: Complete Bachelor's Degree",  'Jun. 2020: Frontend Fundamentals',  'Jun. 2020: React.js/Git/NPM', 'Jul 2020: First Static Webpage', "Jul-Sept. 2020: APIs and Backend-Frameworks", 'Sept-Oct. 2020: Movie App Project', 'Nov. 2020: Responsive Design', 'Current Project: MERN Stack Chat App'];
 }
 
 function getStepContent(step) {
@@ -136,7 +137,7 @@ function getStepContent(step) {
     case 4: 
         return 'Build Arsenal Fans Webpage project using skills to date: HTML, CSS, JS and React.js.';
     case 5:
-        return 'Learned how to fetch and manipulate data from an API. Used Express.js and MongoDB to begin making basic CRUD apps.';
+        return 'Used external data via ES6 fetch, and AJAX. Used API data to store manipulate user requests via Express.js and MongoDB.';
     case 6: 
         return 'First "fullstack" app with a backend. Backend stores user data and password in MongoDB for user authentication and dynanism.';
     case 7:
@@ -183,8 +184,12 @@ export default function ProgressChart() {
       <br></br>
       <br></br>
       <div className='progress-caption'>
-          <div >
-            <Typography className={classes.instructions} id='step-caption-content'><u><i>Progress Review</i></u> <br></br>{getStepContent(activeStep)}</Typography>
+          <div>
+            <Typography className={classes.instructions} id='step-caption-content'>
+              <u><i>Progress Review</i></u> 
+              <br></br>
+              {getStepContent(activeStep)}
+            </Typography>
             <div>
               <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                 Back

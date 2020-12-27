@@ -23,8 +23,9 @@ import ContactToolTip from './ContactToolTip';
 
 
 function handleClick(text) {
+  let modalBox = document.getElementById("modal");
   if (text === "Why programming") {
-    document.getElementById("modal").style.display = "block";
+    modalBox.style.display = "block";
   } else if (text === "Download Resume") {
     window.location.href = process.env.PUBLIC_URL + "/Bemnet Dejene Developer Resume.docx"
   }

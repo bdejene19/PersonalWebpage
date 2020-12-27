@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { CoverPage, BubblesContainer, Bubbles, JourneyDiv, ProjectsWrapper, PageLayout} from './components/styledcomponents/styledComponents';
+import { CoverPage, BubblesContainer, Bubbles, JourneyDiv, ProjectsWrapper, PageLayout, VerticalStepperContainer} from './components/styledcomponents/styledComponents';
 import Intro from './components/functionalComponents/Intro';
 import ContactInfoDrawer from './components/functionalComponents/ContactInfoDrawer';
 import { createMuiTheme, Typography } from '@material-ui/core';
@@ -9,6 +9,7 @@ import { ModalBoxContent } from './components/functionalComponents/ModalBoxConte
 import SkillsWrapper from './components/functionalComponents/SkillsWrapper';
 import ProgressChart from './components/functionalComponents/ProgressChart';
 import {ThemeProvider} from '@material-ui/core'
+import VerticalStepper from './components/functionalComponents/VerticalStepper'
 
 import './index.css'
 
@@ -61,10 +62,13 @@ function App() {
         
         <article>
           <section>
-            <JourneyDiv id="my-journey">
-              
-              <ProgressChart></ProgressChart>
+            <VerticalStepperContainer id='journey-vertical-stepper'>
+              <VerticalStepper></VerticalStepper>
 
+
+            </VerticalStepperContainer>
+            <JourneyDiv id="my-journey">
+              <ProgressChart></ProgressChart>
               <div>
                 {/* <img src={process.env.PUBLIC_URL + "/roadmap.png"} alt="roadmap"></img> */}
               </div>
@@ -125,6 +129,7 @@ function App() {
 
         <SkillsWrapper></SkillsWrapper>
       </footer>
+
     </PageLayout>
     </ThemeProvider>
 

@@ -109,7 +109,7 @@ export const JourneyDiv = styled.div`
    }
 
    #step-caption-content {
-       height: 15vh;
+       height: 18vh;
    }
 
    #stepper-label-icon {
@@ -118,14 +118,29 @@ export const JourneyDiv = styled.div`
 
    .progress-caption {
        background-color: white;
-       width: 40%;
-       height: 25vh;
+       width: 65%;
+       height: 28vh;
        margin-top: 5%;
        padding: 0.5em;
-    
    }
+
+   @media screen and (max-width: 935px) {
+       display: none;
+}
+
+  
 `;
 
+export const VerticalStepperContainer = styled.div`
+    height: fit-content;
+    display: none;
+
+    @media screen and (max-width: 935px) {
+       display: block;
+    }
+
+
+`
 export const ProjectsWrapper = styled.div`
 
     display: grid;
