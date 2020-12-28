@@ -27,7 +27,7 @@ function handleClick(text) {
   if (text === "Why programming") {
     modalBox.style.display = "block";
   } else if (text === "Download Resume") {
-    window.location.href = process.env.PUBLIC_URL + "/Bemnet Dejene Developer Resume.docx"
+    window.location.href = process.env.PUBLIC_URL + "/BemnetDejene Dev Resume.docx"
   }
 }
 

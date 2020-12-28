@@ -61,13 +61,13 @@ function App() {
         </article>
         
         <article>
-          <section>
-            <VerticalStepperContainer id='journey-vertical-stepper'>
+          <section id="my-journey">
+            <VerticalStepperContainer >
               <VerticalStepper></VerticalStepper>
 
 
             </VerticalStepperContainer>
-            <JourneyDiv id="my-journey">
+            <JourneyDiv >
               <ProgressChart></ProgressChart>
               <div>
                 {/* <img src={process.env.PUBLIC_URL + "/roadmap.png"} alt="roadmap"></img> */}
