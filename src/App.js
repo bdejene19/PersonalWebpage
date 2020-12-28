@@ -90,6 +90,7 @@ function App() {
               skillsLearned={NewLandingPageSkills}
               improveNotes={LandingPageImprovements}
               gitLink='https://github.com/bdejene19/DigitalMarketingLandPage'
+              webLink='https://bdejene19.github.io/DigitalMarketingLandPage/'
               ></ProjectCard>
             </section>
           
@@ -103,6 +104,7 @@ function App() {
                 skillsLearned={newMoviePopSkills}
                 improveNotes={moviePopImprovements}
                 gitLink='https://github.com/bdejene19/MovieApp'
+                webLink=''
               ></ProjectCard>
             </section>
 
@@ -116,6 +118,7 @@ function App() {
                 skillsLearned={newArsenalSkills}
                 improveNotes={arsenalImprovements}
                 gitLink='https://github.com/bdejene19/ArsenalSoccerFansPage'
+                webLink='https://bdejene19.github.io/ArsenalSoccerFansPage/'
               ></ProjectCard>
             </section>   
           </ProjectsWrapper>

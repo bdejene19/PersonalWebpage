@@ -14,7 +14,6 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import ReorderIcon from '@material-ui/icons/Reorder';
-import VerticalStepper from './VerticalStepper';
 
 const ColorlibConnector = withStyles({
   alternativeLabel: {
