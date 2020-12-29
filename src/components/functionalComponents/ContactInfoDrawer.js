@@ -147,7 +147,7 @@ export default function PersistentDrawerRight() {
 
         <Divider />
         <div style={{textAlign: "center"}}>
-          <Avatar src="https://www.iconfinder.com/data/icons/diversity-avatars-volume-01-v2/64/man-beard-glasses-african-512.png" alt="avatar" className="profile_photo"></Avatar>
+          <Avatar src="https://www.iconfinder.com/data/icons/diversity-avatars-volume-01-v2/64/man-beard-glasses-african-512.png" alt="avatar" className="profile-photo"></Avatar>
           <div className='immediate-contact'>
             Phone: 519-619-3930<br></br>
             Email: bdejene19@gmail.com<br></br>

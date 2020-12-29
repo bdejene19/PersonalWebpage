@@ -87,6 +87,7 @@ export default function ProjectCard(props) {
                 onMouseEnter={(e) => e.target.play()} 
                 onMouseLeave={(e) => e.target.pause()}
                 pause 
+                muted
               />
 
               <CardActions disableSpacing>

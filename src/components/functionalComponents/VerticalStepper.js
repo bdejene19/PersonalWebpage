@@ -77,11 +77,11 @@ export default function VerticalLinearStepper() {
     return (
       <div className={classes.root}>
         <Stepper activeStep={activeStep} orientation="vertical">
-          {steps.map((label, index) => (
-            <Step key={label}>
-              <StepLabel onClick={() => handleIndexed(label)} style={{pointerEvents: 'cursor'}}>{label}</StepLabel>
+          {steps.map((label) => (
+            <Step key={label} id={label}>
+              <StepLabel onClick={() => handleIndexed(label)} className="label-cursor">{label}</StepLabel>
               <StepContent>
-                <Typography>{getStepContent(index)}</Typography>
+                <Typography>{getStepContent(activeStep)}</Typography>
                 <div className={classes.actionsContainer}>
                   <div>
                     <Button
@@ -92,13 +92,14 @@ export default function VerticalLinearStepper() {
                       Back
                     </Button>
                     <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={handleNext}
-                      className={classes.button}
-                    >
-                      {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                    </Button>
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNext}
+                    className={classes.button}
+                    disabled={activeStep === steps.length - 1}
+                  >
+                      Next
+                  </Button>
                   </div>
                 </div>
               </StepContent>

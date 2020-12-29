@@ -19,7 +19,14 @@ export const PageLayout = styled.div`
         text-align: left;
         padding-left: 5%;
     }
-`
+    .profile-photo {
+        width: 80%;
+    }
+
+    .label-cursor:hover {
+        cursor: pointer;
+    }
+`;
 
 
 export const CoverPage = styled.div`
@@ -202,9 +209,10 @@ export const ProjectsWrapper = styled.div`
         .button-flipcard-back {
             text-align: center;
             justify-content: space-around;
+            width: 100%;
 
             .btn-backSide {
-                width: 7.5vw;
+                width: 35%;
                 margin: 1em;
             }
         }
@@ -217,26 +225,37 @@ export const ProjectsWrapper = styled.div`
 
     @media screen  and (max-width: 1000px) {
         .flipcard-inner {
-            height: 57.5vh;
+            height: 80vh;
+        }
+
+        .btn-backSide {
+            width: 20vw;
+        }
+        
+    }
+
+    @media screen and (max-width: 916px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .flipcard-inner {
+            width: 55vw;
+            height: 80vh;
+            justify-content: center;
+            margin-bottom: 10vh;
+        }
+        .btn-backSide {
+            width: 15vw;
         }
     }
 
 
     @media screen and (max-width: 800px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
         h3 {
             align-items: left;
         }
 
-        .flipcard-inner {
-            width: 65vw;
-            height: 80vh;
-            justify-content: center;
-            margin-bottom: 10vh;
-        }
     }
 
     @media screen and (max-width: 550px) {

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const SkillsDiv = styled.div`
     color: slateblue;
-    margin-left: 2.5vw;
    
    h2 {
        text-align: center;

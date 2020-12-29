@@ -6,14 +6,27 @@ const ModalBackground = styled.div`
   position: fixed;
   overflow: auto;
   width: 50%; 
-  height: 50%;
-  transform: translate(50%, -60%);
+  /* height: 53%; */
+  transform: translate(50%, -75%);
   border: solid lightskyblue 10px; 
   border-radius: 2.5%;
-  margin: 0;
-  padding: 0;
   background: lightskyblue;
   z-index: 1;
+  
+
+  @media screen and (max-width: 1100px) {
+      width: 60%; 
+    transform: translate(20%, -75%);   
+  }
+  @media screen and (max-width: 900px) {
+    transform: translate(15%, -75%);   
+  }
+
+  @media screen and (max-width: 800px) {
+    transform: translate(7.5%, -100%);  
+ 
+  }
+
 `;
 
 const ModalContent = styled.div`
@@ -33,12 +46,15 @@ const ModalContent = styled.div`
       height: 70%;
       width: 100%;
     }
+
+
+    
 `;
 
 const CloseButton = styled.span`
-  font-size: 28px;
+  font-size: 20px;
   float: right;
-  height: 10vh;
+  height: fit-content;
   margin: 0;
   padding: 0;
   transform: translate(-2vw, -1.5vh);
@@ -58,7 +74,7 @@ export const ModalBoxContent = () => {
           <ModalContent>
             <div>
               <CloseButton onClick={() => document.getElementById("modal").style.display = "none"}>&times;</CloseButton>
-             <i><h2>Why I chose coding</h2></i> 
+             <i><h3>Why I chose coding</h3></i> 
             </div>
             <div className="passion-content">
               <p>From the moment I hit 'run program', I felt an immediate strike in balance between creativity and logistics. An algorithm requires logic, however, the optimal solution often takes lots of creativity.</p>

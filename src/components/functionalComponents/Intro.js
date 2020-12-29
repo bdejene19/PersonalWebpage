@@ -6,14 +6,14 @@ const IntroDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    padding-left: 10vw;
-    padding-right: 10vw;  
     
     
     .myName {
-        grid-column: 1/3;
+        grid-column: 1/4;
         text-align: left;
         grid-row: 1;
+        justify-content: center;  
+        padding-left: 1em;
         color: white;
         padding-bottom: 0.1em;
         
@@ -55,8 +55,8 @@ const IntroDiv = styled.div`
         flex-direction: column;
         height: 60vh;
 
-        .coverPage-descrip {
-            
+        .myName {
+            padding-left: 0.5em;
         }
 
         .btns-coverPage {
@@ -84,6 +84,8 @@ const IntroDiv = styled.div`
             font-size: 28px;
             text-align: left;
             padding-bottom: 5vh;
+            padding-left: 1em;
+            padding-right: 1em;
         }
 
         .btns-coverPage {
