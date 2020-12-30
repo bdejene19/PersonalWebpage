@@ -1,3 +1,5 @@
+/** Project card component holds name, videos and languages/technologeis used for each project */
+
 import React from 'react';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -7,7 +9,7 @@ import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
 
 
-
+// project card footer for representing skills
 const SkillsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -25,6 +27,9 @@ const SkillsWrapper = styled.div`
     }
   }
 `;
+
+// rotation factors for each of the project cards
+// NOTE: if i had more project cards i would create a function that takes in the key to create separate rotation factors ratehr than hard coding each variable
 
 let rotateFactorP1 = 0;
 let rotateFactorP2 = 0;
@@ -57,6 +62,7 @@ export default function ProjectCard(props) {
   const thingsLearned = props.skillsLearned;
   const improvements = props.improveNotes;
 
+  // intialize empty arrays since i could not use higher order array functions while passing lists through as props  
   let mySkills = [];
   let newSkills = []
   let myImprovements = [];
@@ -74,12 +80,16 @@ export default function ProjectCard(props) {
 
 
   return (
+        // flip card has 2 sides with each's position being absolute
+        // when mouse is hovering over video portion of card, video plays for each completed project
         <div className='flipcard-inner' id={props.idValue} onClick={() => turnCard(props.idValue)}>
           <div className='flipcard-front'>
+            {/* title */}
               <CardHeader style={{height: 75}}
                 title={props.projectTitle}
               />
 
+            {/* media content => project video => play onMouseEnter, pause onMouseLeave */}
               <CardMedia
                 component='video'
                 id='vid-gif'
@@ -90,10 +100,11 @@ export default function ProjectCard(props) {
                 muted
               />
 
+
+              {/* skills footer of front of poject card */}
               <CardActions disableSpacing>
                 <SkillsWrapper>
                   {mySkills.map(skills => <div><Typography variant='body2' color='inherit'>{skills}</Typography></div>)}
-
                 </SkillsWrapper>
               </CardActions>
           </div>    
@@ -101,6 +112,12 @@ export default function ProjectCard(props) {
           <div className='flipcard-back'>
               <CardHeader style={{height: 50, color: "slateblue"}}
               title='About'/>
+
+             {/* content of the project card backside 
+              - has project description
+              - things learned while doing the project
+              - improvements that could be made
+             */} 
             <div className='flipcard-back-content'>
               <Typography variant='subtitle1'>{props.projDescrip}</Typography>
                 <div className='skills-acquired'>
@@ -119,6 +136,9 @@ export default function ProjectCard(props) {
                 </div>
               </div>
               
+              {/* wrapper for button links
+              - links are to github source code and the actual webapp itself
+              */}
               <div className='button-flipcard-back'>
                 <Button 
                   variant='contained' 

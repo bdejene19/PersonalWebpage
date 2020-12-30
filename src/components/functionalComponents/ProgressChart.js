@@ -15,6 +15,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import ReorderIcon from '@material-ui/icons/Reorder';
 
+
+// styling for horizontal stepper when moving between steps
 const ColorlibConnector = withStyles({
   alternativeLabel: {
     top: 22,
@@ -39,6 +41,7 @@ const ColorlibConnector = withStyles({
   },
 })(StepConnector);
 
+// style for each step => i.e. the change in display when a task is complete
 const useColorlibStepIconStyles = makeStyles({
   root: {
     backgroundColor: '#ccc',
@@ -62,6 +65,7 @@ const useColorlibStepIconStyles = makeStyles({
   },
 });
 
+// icons for stepper
 function ColorlibStepIcon(props) {
   const classes = useColorlibStepIconStyles();
   const { active, completed } = props;
@@ -78,6 +82,7 @@ function ColorlibStepIcon(props) {
     9: <ReorderIcon></ReorderIcon>
   };
 
+  // returns indexed icon froms icons list
   return (
     <div
       className={clsx(classes.root, {
@@ -119,10 +124,12 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
+// steps in stepper
 function getSteps() {
   return ['Mar. 2020: Code python as hobby', "Apr. 2020: Complete Bachelor's Degree",  'Jun. 2020: Frontend Fundamentals',  'Jun. 2020: React.js/Git/NPM', 'Jul 2020: First Static Webpage', "Jul-Sept. 2020: APIs and Backend-Frameworks", 'Sept-Oct. 2020: Movie App Project', 'Nov. 2020: Responsive Design', 'Current Project: MERN Stack Chat App'];
 }
 
+// progress review content for each step
 function getStepContent(step) {
   switch (step) {
     case 0:
@@ -148,11 +155,14 @@ function getStepContent(step) {
   }
 }
 
+
 export default function ProgressChart() {
   const classes = useStyles();
+  // create state for current active step
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
+  // functions to handle forward, backward and indexed clicks for the stepper 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -171,7 +181,9 @@ export default function ProgressChart() {
   }
 
   return (
+    // id given for scroll transition for coverpage journey button click
     <div className={classes.root} id='journey-stepper'>
+      {/* progress stepper */}
       <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />} id='stepper'>
         {steps.map((label) => (
           <Step key={label} id={label}>
@@ -182,6 +194,7 @@ export default function ProgressChart() {
       <br></br>
       <br></br>
       <br></br>
+      {/* caption for each step */}
       <div className='progress-caption'>
           <div>
             <Typography className={classes.instructions} id='step-caption-content'>
@@ -189,6 +202,8 @@ export default function ProgressChart() {
               <br></br>
               {getStepContent(activeStep)}
             </Typography>
+
+            {/* conditional rendering for back and next depending on indexx of stepper */}
             <div>
               <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                 Back

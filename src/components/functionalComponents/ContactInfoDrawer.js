@@ -1,3 +1,8 @@
+/** React component holds animated svg avatar, and all necessary contact info to reach me and a downloadable CV
+ * Includes: phone, email, linkedin, github and CV
+ * 
+ */
+
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -22,6 +27,8 @@ import LiveHelpIcon from '@material-ui/icons/LiveHelp';
 import ContactToolTip from './ContactToolTip';
 
 
+// the clicking of the buttons 'why programming" and "downlaod resume" in contact drawer
+// opens modal box and downloads resume retrosepctively
 function handleClick(text) {
   let modalBox = document.getElementById("modal");
   if (text === "Why programming") {
@@ -33,7 +40,7 @@ function handleClick(text) {
 
 const Avatar = styled.img`
   width: 15vw;
-`
+`;
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -96,6 +103,8 @@ const useStyles = makeStyles((theme) => ({
 export default function PersistentDrawerRight() {
   const classes = useStyles();
   const theme = useTheme();
+
+  // state of contact drawer
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -109,6 +118,7 @@ export default function PersistentDrawerRight() {
   return (
     <div className={classes.root}>
       <CssBaseline />
+      {/* nav bar */}
       <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
@@ -117,7 +127,6 @@ export default function PersistentDrawerRight() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            
           </Typography>
           <IconButton
             color="inherit"
@@ -126,60 +135,64 @@ export default function PersistentDrawerRight() {
             onClick={handleDrawerOpen}
             className={clsx(open && classes.hide)}
           >
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
         </Toolbar>
       </AppBar>
+
+      {/* open contact drawer  */}
       <Drawer
         className={classes.drawer}
         variant="persistent"
         anchor="right"
         open={open}
         classes={{
-          paper: classes.drawerPaper,
+        paper: classes.drawerPaper,
         }}
       >
+        {/* close contact drawer */}
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
-
         <Divider />
-        <div style={{textAlign: "center"}}>
-          <Avatar src="https://www.iconfinder.com/data/icons/diversity-avatars-volume-01-v2/64/man-beard-glasses-african-512.png" alt="avatar" className="profile-photo"></Avatar>
-          <div className='immediate-contact'>
-            Phone: 519-619-3930<br></br>
-            Email: bdejene19@gmail.com<br></br>
+
+          {/* Contact drawer content */}
+          <div style={{textAlign: "center"}}>
+            <Avatar src="https://www.iconfinder.com/data/icons/diversity-avatars-volume-01-v2/64/man-beard-glasses-african-512.png" alt="avatar" className="profile-photo"></Avatar>
+            <div className='immediate-contact'>
+              Phone: 519-619-3930<br></br>
+              Email: bdejene19@gmail.com<br></br>
+            </div>
+            <br></br>
+            {/* tool tipped contact info */}
+            <ContactToolTip></ContactToolTip>
           </div>
-          <br></br>
 
-          <ContactToolTip></ContactToolTip>
-        </div>
+          {/* conditoinal rendering  */}
+          <List>
+            {['Download Resume', 'Why programming'].map((text, index) => {
+              if (index === 3) {
+                return (
+                  <ListItem button key={text} onClick={() => handleClick(text)} id={text}>
+                    <ListItemIcon> <LiveHelpIcon></LiveHelpIcon></ListItemIcon>
+                    <ListItemText primary={text}></ListItemText>
+                  </ListItem>
+                )
+              }
 
-        <List>
-          {['Download Resume', 'Why programming'].map((text, index) => {
-            if (index === 3) {
-              return (
-                <ListItem button key={text} onClick={() => handleClick(text)} id={text}>
-                  <ListItemIcon> <LiveHelpIcon></LiveHelpIcon></ListItemIcon>
-                  <ListItemText primary={text}></ListItemText>
+              else {
+                return (
+                  <ListItem button key={text} onClick={() => handleClick(text)} id={text}>
+                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                  <ListItemText primary={text} />
                 </ListItem>
-              )
-            }
-
-            else {
-
-              return (
-                <ListItem button key={text} onClick={() => handleClick(text)} id={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-              )
-             
-            }
-          })}
-        </List>
+                )
+              
+              }
+            })}
+          </List>
         <Divider />
         <List>
           

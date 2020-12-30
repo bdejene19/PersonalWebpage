@@ -1,7 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import {Typography, createMuiTheme, ThemeProvider, Button} from '@material-ui/core'
+import React from 'react';
+import styled from 'styled-components';
+import {Typography, createMuiTheme, ThemeProvider, Button} from '@material-ui/core';
 
+// Intro to tell targeted audience about my self and specialties
 const IntroDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -119,7 +120,8 @@ function Intro() {
                 </Typography>
 
                 <Typography variant="h4" align='center' color='textSecondary' className='coverPage-descrip'>a Software Developer specializing in React.js and Python</Typography> 
-
+                
+                {/* buttons contain scroll transitions for jouroney and projects components  */}
                 <div className='btns-coverPage'>
                     <ThemeProvider theme={theme}>
                         <Button style={{backgroundColor: '#d84315'}} variant="contained" href="#my-journey" className="cover-btn">My Journey</Button>

@@ -1,5 +1,8 @@
 import styled, {keyframes} from 'styled-components';
 
+// styled-components used throughout app
+// later realized that would be cleaner to make styled components in each component rather than have a single file with all
+// components also have media queries for devices widths
 export const PageLayout = styled.div`
     width: 100vw;
     height: 100vh;
@@ -131,6 +134,7 @@ export const JourneyDiv = styled.div`
        padding: 0.5em;
    }
 
+   // horizontal stepper hidden at 935px
    @media screen and (max-width: 935px) {
        display: none;
 }
@@ -138,6 +142,7 @@ export const JourneyDiv = styled.div`
   
 `;
 
+// vertical stepper is visible for devices of 935px;
 export const VerticalStepperContainer = styled.div`
     height: fit-content;
     display: none;
@@ -149,7 +154,6 @@ export const VerticalStepperContainer = styled.div`
 
 `
 export const ProjectsWrapper = styled.div`
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-template-rows: auto ;
@@ -233,6 +237,8 @@ export const ProjectsWrapper = styled.div`
         }
         
     }
+
+    /*  change display view of project cards to flex column */
 
     @media screen and (max-width: 916px) {
         display: flex;

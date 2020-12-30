@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 
+// footer component => summary of skills, technologies and soft skills 
+
 const SkillsDiv = styled.div`
     color: slateblue;
    
@@ -17,7 +19,6 @@ const SkillsDiv = styled.div`
    }
 
    .skills-wrapper {
-        /* transform: translate(5vw, 3vh); */
         display : grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
@@ -36,11 +37,13 @@ const SkillsDiv = styled.div`
    }
 `;
 
+
+
 function SkillsWrapper() {
     return (
         <SkillsDiv>
-            <div className='progrss'>
-            </div>
+            
+            {/* grid formatted wrapper with column borders */}
             <div className='skills-wrapper'>
                 <h2 className='skills-title'>Summary</h2>
                 <div className="programming-skills">

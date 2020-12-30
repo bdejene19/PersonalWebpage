@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Component represents tool-tipped info to highlight areas in contact drawer => LinkedIn and Github
+
 const ImmediateContactWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -54,14 +56,12 @@ export default function ContactToolTip() {
             <div className="tooltip">
                 <span className="tooltiptext">LinkedIn</span>
                 <a href="https://www.linkedin.com/in/bemnet-dejene-8663521b1/"><img src="https://cdn2.iconfinder.com/data/icons/on-point-social-media/141/LinkedIn-512.png" alt="LinkedIn" className="contact-icon"></img></a>
-
             </div>
+
             <div className="tooltip">
                 <span className="tooltiptext">GitHub</span>
                 <a href="https://github.com/bdejene19"><img src="https://newslibre.com/wp-content/uploads/2018/06/Microsoft-to-Acquire-GitHub-Newslibre-920x425.png" alt="Github" className="contact-icon"></img></a>
-
             </div> 
-
         </ImmediateContactWrapper>
             
             

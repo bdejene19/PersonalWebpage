@@ -7,6 +7,9 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+// verticla stepper => extremely similar to ProgressChart component (i.e. horizontal stepper)
+// uses similar functions with same content as horizontal stepper
+
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
@@ -57,6 +60,7 @@ export default function VerticalLinearStepper() {
     const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
   
+    // handling movement of stepper => allowing clicking ot index through stepper 
     const handleNext = () => {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
@@ -75,11 +79,17 @@ export default function VerticalLinearStepper() {
     }
   
     return (
+      // wrapper
       <div className={classes.root}>
+        {/* stepper display, holding connective icons */}
         <Stepper activeStep={activeStep} orientation="vertical">
+          {/* map through steps list to create stepper with its content*/}
           {steps.map((label) => (
             <Step key={label} id={label}>
               <StepLabel onClick={() => handleIndexed(label)} className="label-cursor">{label}</StepLabel>
+
+
+              {/* Progress review of each step in the stepper. Has conditional rendering depending on index */}
               <StepContent>
                 <Typography>{getStepContent(activeStep)}</Typography>
                 <div className={classes.actionsContainer}>
