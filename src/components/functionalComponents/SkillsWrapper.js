@@ -8,8 +8,7 @@ const SkillsDiv = styled.div`
    
    h2 {
        text-align: center;
-       grid-column: 1/4;
-       
+       grid-column: 1/4;      
    }
 
    .center {
@@ -42,7 +41,7 @@ const SkillsDiv = styled.div`
 function SkillsWrapper() {
     return (
         <SkillsDiv>
-            
+
             {/* grid formatted wrapper with column borders */}
             <div className='skills-wrapper'>
                 <h2 className='skills-title'>Summary</h2>

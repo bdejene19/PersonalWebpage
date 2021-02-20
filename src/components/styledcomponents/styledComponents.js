@@ -155,7 +155,7 @@ export const VerticalStepperContainer = styled.div`
 `
 export const ProjectsWrapper = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto ;
     justify-items: center;
     align-content: center;
@@ -168,7 +168,7 @@ export const ProjectsWrapper = styled.div`
         justify-content: left;
         justify-items: left;
         justify-self: left;
-        grid-column: 1/4;
+        grid-column: 1/5;
         grid-row: 1;
         padding-bottom: 0.5em;
     }
@@ -178,7 +178,7 @@ export const ProjectsWrapper = styled.div`
         background-color: transparent;
         perspective: 1000px;
         cursor: pointer;  
-        width: 29vw;
+        width: 22vw;
         color: slateblue;
         height: 70vh;
         border: solid lightgrey 5px;
@@ -205,7 +205,7 @@ export const ProjectsWrapper = styled.div`
             background-color: slateblue;
             padding-left: 1em;
             height: 75%;
-
+            font-size: 12px;
             ul  {
                 margin-top: 0;
             }

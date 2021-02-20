@@ -34,6 +34,7 @@ const SkillsWrapper = styled.div`
 let rotateFactorP1 = 0;
 let rotateFactorP2 = 0;
 let rotateFactorP3 = 0;
+let rotateFactorP4 = 0;
 
 const turnCard = (idValue) => {
   let cardChosen = document.getElementById(idValue);
@@ -53,6 +54,12 @@ const turnCard = (idValue) => {
   else if (idValue === 'arsenal-fanpage') {
     rotateFactorP3 += 1;
     cardChosen.style.transform = `rotateY(${rotateFactorP3 * 180}deg)`;
+    cardChosen.style.transition = 'all 0.6s';
+  }
+
+  else if (idValue === 'student-scores') {
+    rotateFactorP4 += 1;
+    cardChosen.style.transform = `rotateY(${rotateFactorP4 * 180}deg)`;
     cardChosen.style.transition = 'all 0.6s';
   }
 }

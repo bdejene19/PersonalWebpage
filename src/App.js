@@ -38,6 +38,11 @@ function App() {
   let newArsenalSkills = ["React States", "React Life-Cycles", "DOM manipulation"]
   let arsenalImprovements = ['Fetch data from API', 'Add grid/flexbox layout for consistency/efficiency']
 
+
+  let studentTestSkills = ['React', 'CSS', 'JS'];
+  let newStudentSkills = ['Search-Bar Filter', 'React Hooks', 'Hook Life-cycles']
+  let studentImprovements = ['Tag-filter']
+
   const theme = createMuiTheme({
     typography: {
       fontFamily: 'Merriweather'
@@ -103,9 +108,25 @@ function App() {
           */}
           <article>
             <ProjectsWrapper>
-              <Typography variant="h3" id='projects'>Personal projects</Typography>      
-              <section> 
-                {/* Props for project card component */}
+              <Typography variant="h3" id='projects'>Personal projects</Typography>  
+
+              
+              <section>
+                <ProjectCard
+                  projectTitle="Student Test Scores"
+                  skillsInvolved={studentTestSkills}
+                  idValue='student-scores'
+                  projectGif='/studentScores.mp4'
+                  projDescrip="Calling data from an API, presenting the data in an expandable view. Also provides ability to search by student name."
+                  skillsLearned={newStudentSkills}
+                  improveNotes={studentImprovements}
+                  gitLink='https://github.com/bdejene19/SearchStudents-AddTags'
+                  // webLink='https://bdejene19.github.io/ArsenalSoccerFansPage/'
+                ></ProjectCard>
+              </section> 
+              
+                 
+              <section>
                 <ProjectCard 
                 projectTitle='Digital Marketing Landing-Page' 
                 skillsInvolved={LandingPageSkills}
