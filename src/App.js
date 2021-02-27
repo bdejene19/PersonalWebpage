@@ -117,11 +117,11 @@ function App() {
                   skillsInvolved={studentTestSkills}
                   idValue='student-scores'
                   projectGif='/studentScores.mp4'
-                  projDescrip="Calling data from an API, presenting the data in an expandable view. Also provides ability to search by student name."
+                  projDescrip="Implement RESTful API call, presenting the data in an expandable view. Also provides ability to search by student name."
                   skillsLearned={newStudentSkills}
                   improveNotes={studentImprovements}
                   gitLink='https://github.com/bdejene19/SearchStudents-AddTags'
-                  // webLink='https://bdejene19.github.io/ArsenalSoccerFansPage/'
+                  webLink='https://boring-banach-788d03.netlify.app/'
                 ></ProjectCard>
               </section> 
               
