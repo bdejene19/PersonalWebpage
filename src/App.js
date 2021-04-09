@@ -25,23 +25,27 @@ import VerticalStepper from './components/functionalComponents/VerticalStepper'
 import './index.css'
 
 function App() {
-  // Lists for sections of project cards to loop through => future reference might be easier to make an object 
+  // Lists for sections of project cards to loop through => future reference might be easier to make an 
+  let expconSkills = ['React', 'Material-UI', 'JS', 'CSS'];
+  let newExpconSkills = ['Wireframe Implementation', 'React-router', 'Page layout design patterns'];
+  let expconImprove = ['Responsive Design', 'Introduction of backend via Express.js or Django to process OAuth digital payments'];
+  
+  let studentTestSkills = ['React', 'CSS', 'JS'];
+  let newStudentSkills = ['Search-Bar Filter', 'React Hooks', 'Hook Life-cycles']
+  let studentImprovements = ['Tag-filter', 'Views based on authentication']
+
   let LandingPageSkills = ['React', 'Material-UI','Responsive Design'];
-  let NewLandingPageSkills = ['Responsive web design - using styled components in particular', 'Power and flexibility of grid/flexbox combination'];
-  let LandingPageImprovements = ['Learn how to use Figma editor/SVGs to give an even more modern look'];
+  let NewLandingPageSkills = ['Styled-components responsive design', 'Power and flexibility of grid/flexbox combination'];
+  let LandingPageImprovements = ['Learn how to use Figma editor/SVGs for controlled styling', 'Audio or video background window effects'];
   
   let MoviePopSkills = ['Express', 'MongoDB', 'JS', 'Handlebars'];
   let newMoviePopSkills = [ 'Server Side Rendering (SSR)', 'Non-relational Databases', 'Routing', 'CRUD API'];
-  let moviePopImprovements = ['Add React: to make code component based', 'Add bcrypt/OAuth security measures', 'Use CSS-frameworks to "prettify" more'];
+  let moviePopImprovements = ['Add React components', 'Add bcrypt/OAuth security measures', 'Use CSS-frameworks to "prettify"'];
   
   let ArsenalFansSkills = ["React", 'HTML', "CSS", "JS"];
   let newArsenalSkills = ["React States", "React Life-Cycles", "DOM manipulation"]
   let arsenalImprovements = ['Fetch data from API', 'Add grid/flexbox layout for consistency/efficiency']
 
-
-  let studentTestSkills = ['React', 'CSS', 'JS'];
-  let newStudentSkills = ['Search-Bar Filter', 'React Hooks', 'Hook Life-cycles']
-  let studentImprovements = ['Tag-filter']
 
   const theme = createMuiTheme({
     typography: {
@@ -108,9 +112,23 @@ function App() {
           */}
           <article>
             <ProjectsWrapper>
-              <Typography variant="h3" id='projects'>Personal projects</Typography>  
+              <Typography variant="h3" id='projects'>Personal projects</Typography>       
 
-              
+
+              <section>
+                <ProjectCard 
+                  projectTitle="EXP|CON Concert"
+                  skillsInvolved={expconSkills}
+                  idValue='expcon-concert'
+                  projectGif='EXP_CON.mp4'
+                  projDescrip='Implemented UX wireframes and built multipage react desktop app, that acts as the frontline for ticket sales and digitally presents the concert experience.'
+                  skillsLearned={newExpconSkills}
+                  improveNotes={expconImprove}
+                  gitLink='https://github.com/bdejene19/ConcertWebpage'
+                  webLink='https://focused-heyrovsky-378c47.netlify.app/'
+                  ></ProjectCard>
+              </section>
+
               <section>
                 <ProjectCard
                   projectTitle="Student Test Scores"
@@ -132,7 +150,7 @@ function App() {
                 skillsInvolved={LandingPageSkills}
                 idValue='landing-page'
                 projectGif='/dmpagegif.mp4'
-                projDescrip='Created landing-page clone of a digital marketing, making it fully responsive to be viewable on all monitors'
+                projDescrip='Created landing-page clone of a digital marketing agency, making it fully responsive to be viewable on all devices.'
                 skillsLearned={NewLandingPageSkills}
                 improveNotes={LandingPageImprovements}
                 gitLink='https://github.com/bdejene19/DigitalMarketingLandPage'
@@ -146,7 +164,7 @@ function App() {
                   skillsInvolved={MoviePopSkills}
                   idValue='movie-app'
                   projectGif='movieappgif.mp4'
-                  projDescrip='Built own API for server using Express.js as backend, and persisted users using MongoDb. Movie/show data fetched from TMDb API.'
+                  projDescrip='Built API using Express.js as backend, and persisted users via MongoDb. Movie/show data fetched from TMDb API to create multipage app.'
                   skillsLearned={newMoviePopSkills}
                   improveNotes={moviePopImprovements}
                   gitLink='https://github.com/bdejene19/MovieApp'
@@ -160,7 +178,7 @@ function App() {
                   skillsInvolved={ArsenalFansSkills}
                   idValue='arsenal-fanpage'
                   projectGif='arsenalfansgif.mp4'
-                  projDescrip="My first front-end project: a single-page app meant to showcase the past, present and future of the soccer club, Arsenal. Is a static HTML site, however, has dynanism through state management."
+                  projDescrip="First front-end project: a single-page app meant to showcase the past, present and future of the soccer club, Arsenal. Is a static HTML site, however, has dynanism through use of state."
                   skillsLearned={newArsenalSkills}
                   improveNotes={arsenalImprovements}
                   gitLink='https://github.com/bdejene19/ArsenalSoccerFansPage'

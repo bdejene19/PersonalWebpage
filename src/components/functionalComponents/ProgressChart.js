@@ -126,30 +126,30 @@ const useStyles = makeStyles((theme) => ({
 
 // steps in stepper
 function getSteps() {
-  return ['Mar. 2020: Code python as hobby', "Apr. 2020: Complete Bachelor's Degree",  'Jun. 2020: Frontend Fundamentals',  'Jun. 2020: React.js/Git/NPM', 'Jul 2020: First Static Webpage', "Jul-Sept. 2020: APIs and Backend-Frameworks", 'Sept-Oct. 2020: Movie App Project', 'Nov. 2020: Responsive Design', 'Current Project: MERN Stack Chat App'];
+  return ["Apr. 2020: Complete Bachelor's Degree",  'Jun. 2020: Frontend Fundamentals',  'Jun. 2020: React/Git/NPM', "Jul-Sept. 2020: APIs and Express.js", 'Sept-Oct. 2020: Movie App Project', 'Nov-Dec. 2020: Digital Marketing Landing-Page', 'Jan. 2021: Next.js Projects', 'Feb. 2021: Data Structures and Algorithrms', 'Mar. 2021: EXP|CON App'];
 }
 
 // progress review content for each step
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return (`Libraries: MatplotLib, Pandas, skLearn, TensforFlow. Also practiced basic algorithms (BFS/DFS) and data structures (Stacks, Queues, Recursion and Binary Trees).`);
-    case 1:
       return 'Double Major in Medical Science and Biology from the University of Western Ontario.';
-    case 2:
+    case 1:
       return 'HTML/CSS/Javascript ES6 best practices and syntax.';
-    case 3:
+    case 2:
         return 'Chose React.js as front-end framework and cover Git to commit projects as I go. NPM knowledge was required to progress further (e.g. npm scripts, dependencies, etc.).';
-    case 4: 
-        return 'Build Arsenal Fans Webpage project using skills learned to date: HTML, CSS, JS and React.js.';
-    case 5:
+    case 3:
         return 'Used external data via ES6 fetch, and AJAX. Fetched API data and stored and manipulated user requests via Express.js and MongoDB.';
-    case 6: 
+    case 4: 
         return 'First "fullstack" app with a back-end. Back-end stores user data and password in MongoDB for user authentication and dynanism.';
-    case 7:
+    case 5:
         return 'Create a landing-page clone of a digital marketing agency to practice consistent styling via grid/flexbox and styled components.';
-    case 8: 
-        return 'Full stack app that has a more complex back-end to make a more Progessive Web App, including the use of websockets and conditional push-notifications for a real live-time chat feel.';
+    case 6: 
+      return 'Implemented small projects using Next.js to practice SSR through react. Mini projects include lazy loading using the Intersection Observer API.'
+    case 7: 
+      return "Read books on data structures and algorithms such as 'Cracking the Coding Interview'.";
+    case 8:  
+      return "Fully developed from start to finish a multi-page React app, implementing UI/UX wireframes. Project highlights consistency in React modularization and component reusability."
     default:
       return 'Unknown step';
   }

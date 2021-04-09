@@ -35,6 +35,7 @@ let rotateFactorP1 = 0;
 let rotateFactorP2 = 0;
 let rotateFactorP3 = 0;
 let rotateFactorP4 = 0;
+let rotateFactorP5 = 0;
 
 const turnCard = (idValue) => {
   let cardChosen = document.getElementById(idValue);
@@ -60,6 +61,12 @@ const turnCard = (idValue) => {
   else if (idValue === 'student-scores') {
     rotateFactorP4 += 1;
     cardChosen.style.transform = `rotateY(${rotateFactorP4 * 180}deg)`;
+    cardChosen.style.transition = 'all 0.6s';
+  }
+
+  else if (idValue === 'expcon-concert') {
+    rotateFactorP5 += 1;
+    cardChosen.style.transform = `rotateY(${rotateFactorP5 * 180}deg)`;
     cardChosen.style.transition = 'all 0.6s';
   }
 }
@@ -126,9 +133,9 @@ export default function ProjectCard(props) {
               - improvements that could be made
              */} 
             <div className='flipcard-back-content'>
-              <Typography variant='subtitle1'>{props.projDescrip}</Typography>
+              <Typography variant='subtitle1' className='project-description'>{props.projDescrip}</Typography>
                 <div className='skills-acquired'>
-                  <Typography variant='subtitle2'><b>What I Learned</b></Typography>
+                  <Typography variant='subtitle2' className='subtitle'><b>What I Learned</b></Typography>
                     <ul>
                       {newSkills.map(skill => <li>{skill}</li>)}
                     </ul>
@@ -136,7 +143,7 @@ export default function ProjectCard(props) {
 
 
                 <div className='skills-acquired'>
-                  <Typography variant='subtitle2'><b>What/How I would improve</b></Typography>
+                  <Typography variant='subtitle2' className='subtitle'><b>What/How I would improve</b></Typography>
                     <ul>
                       {myImprovements.map(improvement => <li>{improvement}</li>)}
                     </ul>

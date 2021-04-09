@@ -155,11 +155,11 @@ export const VerticalStepperContainer = styled.div`
 `
 export const ProjectsWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto ;
     justify-items: center;
     align-content: center;
-    grid-gap: 0;
+   
     padding: 1em;
 
     #projects {
@@ -168,7 +168,7 @@ export const ProjectsWrapper = styled.div`
         justify-content: left;
         justify-items: left;
         justify-self: left;
-        grid-column: 1/5;
+        grid-column: 1/4;
         grid-row: 1;
         padding-bottom: 0.5em;
     }
@@ -178,9 +178,10 @@ export const ProjectsWrapper = styled.div`
         background-color: transparent;
         perspective: 1000px;
         cursor: pointer;  
-        width: 22vw;
+        width: 28vw;
         color: slateblue;
         height: 70vh;
+        margin-bottom: 2em;
         border: solid lightgrey 5px;
         box-shadow: slateblue 0px 0px 5px 5px;
         
@@ -205,7 +206,16 @@ export const ProjectsWrapper = styled.div`
             background-color: slateblue;
             padding-left: 1em;
             height: 75%;
-            font-size: 12px;
+            font-size: 14px;
+            .project-description {
+                font-size: 14px;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
             ul  {
                 margin-top: 0;
             }
@@ -246,7 +256,7 @@ export const ProjectsWrapper = styled.div`
         align-items: center;
 
         .flipcard-inner {
-            width: 55vw;
+            width: 60vw;
             height: 80vh;
             justify-content: center;
             margin-bottom: 10vh;
@@ -267,6 +277,7 @@ export const ProjectsWrapper = styled.div`
     @media screen and (max-width: 550px) {
         .flipcard-inner {
             height: 67.5vh;
+            width: 75vw;
         }
     }
 `;
